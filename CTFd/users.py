@@ -10,6 +10,10 @@ from CTFd.utils.decorators.visibility import (
 from CTFd.utils.helpers import get_errors, get_infos
 from CTFd.utils.user import get_current_user
 
+####
+from CTFd.utils.scores import get_standings
+####
+
 users = Blueprint("users", __name__)
 
 
@@ -35,6 +39,10 @@ def listing():
     args = dict(request.args)
     args.pop("page", 1)
 
+    ####
+    standings = get_standings()
+    ####
+
     return render_template(
         "users/users.html",
         users=users,
@@ -42,6 +50,7 @@ def listing():
         next_page=url_for(request.endpoint, page=users.next_num, **args),
         q=q,
         field=field,
+        standings=standings,
     )
 
 
