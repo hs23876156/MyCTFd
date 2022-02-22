@@ -46,13 +46,49 @@
 				<table class="table table-striped">
 					<thead>
 					<tr>
+						<td><b>Rank</b></td>>
 						<td><b>User</b></td>
-						<td><b>Website</b></td>
+						<td><b>Score</b></td>
+						<!--
 						<td class="d-none d-md-table-cell d-lg-table-cell"><b>Affiliation</b></td>
 						<td class="d-none d-md-table-cell d-lg-table-cell"><b>Country</b></td>
+						-->
 					</tr>
 					</thead>
 					<tbody>
+
+<!--#####################################################################################################-->
+
+					{% for standing in standings %}
+						<tr>
+							<!--
+								user rank 
+							-->
+								<th scope="row">{{ loop.index }}</th>
+							<!--
+								<th scope="row" class="text-center">{{ loop.index }}</th>
+							-->
+							<td>
+								<a href="{{ generate_account_url(standing.account_id) }}">
+									{{ standing.name | truncate(50) }}
+	
+									{% if standing.oauth_id %}
+										{% if Configs.user_mode == 'teams' %}
+										<a href="https://majorleaguecyber.org/t/{{ standing.name }}">
+											<span class="badge badge-primary">Official</span>
+										</a>
+										{% elif Configs.user_mode == 'users' %}
+										<a href="https://majorleaguecyber.org/u/{{ standing.name }}">
+											<span class="badge badge-primary">Official</span>
+										</a>
+										{% endif %}
+									{% endif %}
+								</a>
+							</td>
+							<td>{{ standing.score }}</td>
+						</tr>
+					{% endfor %}
+					<!--
 					{% for user in users.items %}
 						<tr>
 							<td>
@@ -100,6 +136,9 @@
 							</td>
 						</tr>
 					{% endfor %}
+					-->
+<!--#####################################################################################################-->
+
 					</tbody>
 				</table>
 			</div>
