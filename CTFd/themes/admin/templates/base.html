@@ -44,7 +44,7 @@
 			<div class="collapse navbar-collapse" id="base-navbars">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item"><a class="nav-link" href="{{ url_for('admin.statistics') }}">Statistics</a></li>
-					<li class="nav-item"><a class="nav-link" href="{{ url_for('admin.notifications') }}">Notifications</a>
+					<!--<li class="nav-item"><a class="nav-link" href="{{ url_for('admin.notifications') }}">Notifications</a>-->
 					</li>
 					<li class="nav-item dropdown">
 						<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Pages</a>
@@ -110,8 +110,11 @@
 	</nav>
 
 	<main role="main">
+		
 		{% if get_config('version_latest') %}
+		<!-- version check
 		<div class="container-fluid bg-warning text-center py-3">
+			
 			<div class="row">
 				<div class="col-md-12">
 					<a class="btn btn-warning" href="{{ get_config('version_latest') }}">
@@ -119,10 +122,13 @@
 					</a>
 				</div>
 			</div>
+			
 		</div>
+		-->
 		{% endif %}
 		{% block content %}
 		{% endblock %}
+		
 	</main>
 
 	<footer class="footer pt-2">
