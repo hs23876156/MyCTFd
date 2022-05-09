@@ -42,6 +42,13 @@
 						{{ form.submit(class="btn btn-md btn-primary btn-outlined float-right") }}
 					</div>
 				</div>
+
+				<br>
+
+				<script src='https://www.google.com/recaptcha/api.js'></script>
+				<!--<script src='api.js'></script>-->
+				<div class="g-recaptcha" data-sitekey="6Ldbdg0TAAAAAI7KAf72Q6uagbWzWecTeBWmrCpJ"></div>
+
 				{{ form.nonce() }}
 			</form>
 			{% endwith %}
