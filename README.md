@@ -1,1 +1,1 @@
-## MCNDU CTFd 2021
+## MCNDU CTFd 2022
