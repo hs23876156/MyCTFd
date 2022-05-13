@@ -28,7 +28,7 @@
 		{% elif request.script_root %}
 			<link rel="stylesheet" type="text/css" href="{{ request.script_root }}/{{ stylesheet }}">
 		{% else %}
-			<link rel="stylesheet" type="text/css" href="{{ stylesheet }}">
+			<link rel="stylesheet" type="text/css" href="{資安競賽練習系統ylesheet }}">
 		{% endif %}
 	{% endfor %}
 </head>
@@ -36,7 +36,7 @@
 <body>
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 		<div class="container">
-			<a href="{{ url_for('views.static_html', route='/') }}" class="navbar-brand">CTFd</a>
+			<a href="{{ url_for('views.static_html', route='/') }}" class="navbar-brand">資安競賽練習系統</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#base-navbars"
 					aria-controls="base-navbars" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
